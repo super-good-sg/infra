@@ -1,19 +1,28 @@
 # infra
 
-Super Good infrastructure (cloud resources, deploy pipelines).
+Super Good infrastructure: cloud resources and deploy pipelines.
 
-## Docs (source of truth)
-Specs, ADRs, contracts and the agent workflow live in [document-specs](https://github.com/super-good-sg/document-specs). Read [docs/agent-workflow.md](https://github.com/super-good-sg/document-specs/blob/main/docs/agent-workflow.md) before starting any ticket. Work lives in Linear (project SuperGood).
+## Read first
+- [agent-workflow.md](https://github.com/super-good-sg/document-specs/blob/main/docs/agent-workflow.md) and the [CLAUDE.md standard](https://github.com/super-good-sg/document-specs/blob/main/docs/claude-md-standard.md).
+- The spec, contract or ADR linked from your Linear ticket (project SuperGood). Linear is the source of truth for work.
 
-## Build / test / lint
-TODO: fill in once the project is scaffolded.
-- Build: TODO
+## Commands
+- Build / plan: TODO (set when IaC tooling is chosen)
 - Test: TODO
 - Lint: TODO
 
+## Folder map
+- Empty apart from README and this file. Folders: TODO (added when IaC tooling is chosen).
+
+## Where things live
+Specs, ADRs and contracts (OpenAPI, order schema) all live in [document-specs](https://github.com/super-good-sg/document-specs). See the [standard](https://github.com/super-good-sg/document-specs/blob/main/docs/claude-md-standard.md#where-things-live-all-in-document-specs) for paths.
+
 ## Conventions
-- Cloud resource changes and anything that spends money need explicit approval.
-- One ticket, one branch (Linear `gitBranchName`), one PR. Never merge your own PR.
+- Branch name is the Linear `gitBranchName`. One ticket, one branch, one PR. Never merge your own PR.
 - Reuse approved patterns; stop and ask before adding a new library or convention.
-- Contracts (OpenAPI, order schema) change in document-specs first, never here.
 - No secrets in code or commits.
+- Anything that changes cloud resources or spends money needs explicit approval. Plan/preview first; never apply on your own.
+
+## Do not touch
+- Production resources and state.
+- Credentials and Key Vault contents. Never print, copy or commit them.
